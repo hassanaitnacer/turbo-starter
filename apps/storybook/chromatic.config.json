@@ -1,5 +1,5 @@
 {
-  "projectId": "Project:696369e58bab4c2e9cedf6cb",
+  "projectId": "Project:69639508a131084f7150dbdb",
   "storybookBaseDir": "apps/storybook",
   "externals": ["packages/ui/src/**"],
   "zip": true
