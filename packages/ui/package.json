@@ -52,7 +52,7 @@
     "happy-dom": "^20.0.11",
     "jsdom": "^27.4.0",
     "tailwindcss": "^4.1.18",
-    "tsdown": "^0.18.3",
+    "tsdown": "^0.19.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vitest": "^4.0.16"
