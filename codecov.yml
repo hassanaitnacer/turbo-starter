@@ -1,0 +1,31 @@
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 1%
+    patch:
+      default:
+        target: 80%
+
+# Track coverage per package separately
+flags:
+  ui:
+    paths:
+      - packages/ui/
+    carryforward: true
+  web:
+    paths:
+      - apps/web/
+    carryforward: true
+  admin:
+    paths:
+      - apps/admin/
+    carryforward: true
+
+ignore:
+  - "**/*.stories.*"
+  - "**/*.test.*"
+  - "**/*.spec.*"
+  - "**/*.config.*"
+  - "**/*.d.ts"

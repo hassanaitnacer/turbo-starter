@@ -1,0 +1,17 @@
+/* Ensure story previews in Docs page use the theme background */
+.docs-story,
+.sbdocs-preview,
+.sb-story {
+  background-color: var(--default-background-color) !important;
+}
+
+/* Ensure the main preview area uses theme background */
+#storybook-root,
+#storybook-docs {
+  background-color: var(--default-background-color);
+}
+
+/* Remove any conflicting backgrounds from Storybook's default styles */
+.sbdocs-wrapper {
+  background-color: transparent;
+}

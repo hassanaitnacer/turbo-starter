@@ -1,0 +1,19 @@
+@import "tailwix/colors/gray.css";
+@import "tailwix/colors/gray-alpha.css";
+
+:root {
+  --gray-contrast: white;
+}
+
+:root,
+.light,
+.light-theme {
+  --gray-0: #ffffff;
+  --gray-100: #141414;
+}
+
+.dark,
+.dark-theme {
+  --gray-0: #141414;
+  --gray-100: #ffffff;
+}

@@ -1,0 +1,6 @@
+@import "tailwix/colors/yellow.css";
+@import "tailwix/colors/yellow-alpha.css";
+
+:root {
+  --yellow-contrast: white;
+}

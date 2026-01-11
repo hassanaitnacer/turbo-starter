@@ -1,0 +1,6 @@
+@import "tailwix/colors/sand.css";
+@import "tailwix/colors/sand-alpha.css";
+
+:root {
+  --sand-contrast: white;
+}

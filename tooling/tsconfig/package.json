@@ -1,0 +1,12 @@
+{
+  "name": "@nacercodes/tsconfig",
+  "version": "0.0.1",
+  "private": true,
+  "exports": {
+    "./next": "./next.json",
+    "./react-library": "./react-library.json",
+    "./react-router": "./react-router.json",
+    "./bundler/dom": "./bundler/dom.json",
+    "./bundler/no-dom": "./bundler/no-dom.json"
+  }
+}

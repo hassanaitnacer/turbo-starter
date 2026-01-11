@@ -1,0 +1,38 @@
+{
+  "name": "storybook",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
+    "build": "pnpm run build-storybook",
+    "build-storybook": "storybook build --docs",
+    "start": "storybook serve",
+    "lint": "eslint --max-warnings 0",
+    "check-types": "tsc --noEmit",
+    "chromatic": "npx chromatic --only-changed"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@codecov/vite-plugin": "^1.9.1",
+    "@nacercodes/eslint": "workspace:*",
+    "@nacercodes/ui": "workspace:*",
+    "@storybook/addon-a11y": "^10.1.10",
+    "@storybook/addon-docs": "^10.1.10",
+    "@storybook/addon-themes": "^10.1.10",
+    "@storybook/react-vite": "^10.1.10",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vueless/storybook-dark-mode": "^10.0.4",
+    "eslint": "^9.39.2",
+    "storybook": "^10.1.10",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.0"
+  }
+}

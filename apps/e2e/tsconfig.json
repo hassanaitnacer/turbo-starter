@@ -1,0 +1,9 @@
+{
+  "extends": "@nacercodes/tsconfig/bundler/dom",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}

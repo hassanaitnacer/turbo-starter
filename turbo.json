@@ -1,0 +1,64 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
+  "globalEnv": ["DEV", "NODE_ENV", "CODECOV_TOKEN"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**", "storybook-static/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "check-types": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "app/**/*.tsx",
+        "app/**/*.ts",
+        "**/*.test.ts",
+        "**/*.test.tsx"
+      ]
+    },
+    "e2e#test": {
+      "outputs": []
+    },
+    "test:run": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": [],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "app/**/*.tsx",
+        "app/**/*.ts",
+        "**/*.test.ts",
+        "**/*.test.tsx"
+      ]
+    },
+    "test:coverage": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": ["coverage/**"],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "app/**/*.tsx",
+        "app/**/*.ts",
+        "**/*.test.ts",
+        "**/*.test.tsx"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": ["ALLOWED_DEV_ORIGINS"]
+    }
+  }
+}

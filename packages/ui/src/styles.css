@@ -1,0 +1,6 @@
+/* Component-level styles for the UI package */
+@import "tailwindcss" prefix(ui);
+@import "tw-animate-css";
+@import "@nacercodes/tailwindcss";
+
+@custom-variant slot-icon (& [data-slot="icon"]);

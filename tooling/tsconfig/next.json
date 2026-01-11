@@ -1,0 +1,7 @@
+{
+  "extends": "./bundler/dom",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "incremental": true
+  }
+}

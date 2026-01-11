@@ -1,0 +1,80 @@
+name: Test
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches:
+      - "feature/**"
+      - "hotfix/**"
+      - "release/**"
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        uses: ./.github/actions/setup
+
+      - name: Run tests with coverage
+        run: pnpm test:coverage
+
+      - name: Upload UI coverage
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./packages/ui/coverage/lcov.info
+          flags: ui
+          name: ui-coverage
+          fail_ci_if_error: true
+
+      - name: Upload Web coverage
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./apps/web/coverage/lcov.info
+          flags: web
+          name: web-coverage
+          fail_ci_if_error: true
+
+      - name: Upload Admin coverage
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./apps/admin/coverage/lcov.info
+          flags: admin
+          name: admin-coverage
+          fail_ci_if_error: true
+
+      - name: Upload test results
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./packages/ui/test-results/junit.xml,./apps/web/test-results/junit.xml,./apps/admin/test-results/junit.xml
+
+  storybook-build:
+    name: Storybook Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        uses: ./.github/actions/setup
+
+      - name: Build UI package
+        run: pnpm build --filter=@nacercodes/ui
+
+      - name: Build Storybook
+        run: pnpm --filter storybook build-storybook

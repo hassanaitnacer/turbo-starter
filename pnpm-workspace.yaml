@@ -1,0 +1,9 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "tooling/*"
+
+catalogs:
+  radix:
+    "@radix-ui/react-slot": ^1.2.4
+    "@radix-ui/react-visually-hidden": ^1.2.4

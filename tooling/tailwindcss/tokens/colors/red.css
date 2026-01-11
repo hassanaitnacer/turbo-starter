@@ -1,0 +1,6 @@
+@import "tailwix/colors/red.css";
+@import "tailwix/colors/red-alpha.css";
+
+:root {
+  --red-contrast: white;
+}

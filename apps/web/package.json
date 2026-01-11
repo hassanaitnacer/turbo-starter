@@ -1,0 +1,49 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
+    "lint": "eslint --max-warnings 0",
+    "check-types": "react-router typegen && tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@nacercodes/ui": "workspace:*",
+    "@react-router/node": "^7.11.0",
+    "@react-router/serve": "^7.11.0",
+    "isbot": "^5.1.31",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router": "^7.11.0"
+  },
+  "devDependencies": {
+    "@codecov/vite-plugin": "^1.9.1",
+    "@nacercodes/eslint": "workspace:*",
+    "@nacercodes/tailwindcss": "workspace:*",
+    "@nacercodes/tsconfig": "workspace:*",
+    "@react-router/dev": "^7.11.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/coverage-v8": "^4.0.16",
+    "eslint": "^9.39.2",
+    "jsdom": "^27.4.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.3.0",
+    "vite-tsconfig-paths": "^6.0.3",
+    "vitest": "^4.0.16"
+  }
+}

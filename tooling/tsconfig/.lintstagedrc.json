@@ -1,0 +1,3 @@
+{
+  "*.json": ["pnpm exec prettier --write"]
+}

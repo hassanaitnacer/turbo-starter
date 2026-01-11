@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "./clear.css";
+@import "tailwix";
+
+@import "./tokens/index.css";
+
+@theme {
+  --spacing: 1px;
+}
+
+* {
+  outline: none;
+}
